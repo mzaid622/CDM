@@ -1,8 +1,6 @@
 {% extends "accounts/index.html" %} 
 {% block content %} 
-{% include "accounts/status.html" %} 
-
-{% comment %} This is Dashboard File {% endcomment %}
+{% include "accounts/status.html"%} {% comment %} This is Dashboard File {% endcomment %}
 
 <div class="row">
   <div class="col-md-5">
@@ -14,8 +12,15 @@
         <tr>
           <th></th>
           <th>Customer</th>
-          <th>Orders</th>
+          <th>Phone</th>
         </tr>
+        {% for customer in customers %}
+        <tr>
+          <td><a class="btn btn-sm btn-info" href="{% url "customer" customer.id %} ">View</a></td>
+          <td>{{customer.name}}</td>
+          <td>{{customer.phone}}</td>
+        </tr>
+        {% endfor %}
       </table>
     </div>
   </div>
@@ -33,6 +38,15 @@
           <th>Update</th>
           <th>Remove</th>
         </tr>
+        {% for order in orders %}
+        <tr>
+          <td>{{order.product}}</td>
+          <td>{{order.date_created}}</td>
+          <td>{{order.status}}</td>
+          <td><a class="btn btn-sm btn-info" href="#">Update</a></td>
+          <td><a class="btn btn-sm btn-danger" href="#">Remove</a></td>
+        </tr>
+        {% endfor %}
       </table>
     </div>
   </div>

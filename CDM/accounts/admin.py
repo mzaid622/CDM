@@ -7,4 +7,6 @@ admin.site.register(Customer)
 
 admin.site.register(Product)
 
+admin.site.register(Tags)
+
 admin.site.register(Order)
