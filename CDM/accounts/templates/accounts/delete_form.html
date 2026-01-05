@@ -1,0 +1,24 @@
+{% extends "accounts/index.html" %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-body">
+
+      <p>Are you sure you want to delete "{{item}}"?</p>
+
+      {% comment %} in future if error occur see this {% endcomment %}
+{% comment %} {% url 'delete_order' item.id %} {% endcomment %}
+<form action="" method= "POST">
+  {% csrf_token %}
+  <a href="{% url 'home' %}">Cancel</a>
+  <input type="submit" class="btn btn-danger" name="Confirm">
+</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
