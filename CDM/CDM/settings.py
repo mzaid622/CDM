@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "accounts",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
@@ -123,5 +124,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-MEDIA_ROUTE = os.path.join(BASE_DIR,'media')
-
+MEDIA_ROUTE = os.path.join(BASE_DIR, "media")
